@@ -1,0 +1,55 @@
+version: '3.2'
+
+services:
+  
+  prometheus:
+    image: prom/prometheus
+    hostname: prometheus
+    volumes:
+      - ./config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --web.listen-address=:9091
+    ports:
+      - "9091:9091"
+  grafana:
+    image: grafana/grafana
+    hostname: grafana
+    volumes:
+       - ./config/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+       - ./config/grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml
+       - ./config/grafana/jvm-micrometer_rev9.json:/var/lib/grafana/dashboards/jvm-micrometer_rev9.json
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    ports:
+      - "3000:3000"
+  loki:
+    container_name: loki
+    image: grafana/loki:2.7.4
+    hostname: loki
+    ports:
+      - "3100:3100"
+    volumes:
+       - ./config/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    command: -config.file=/etc/loki/local-config.yaml
+  zipkin:
+    image: ghcr.io/openzipkin/zipkin-slim
+    hostname: zipkin
+    container_name: zipkin
+    environment:
+      - STORAGE_TYPE=mem
+    ports:
+      - 9411:9411
+  ms-ppt-metricas:
+    image: msppt/metricas:latest
+    hostname: metricas
+    container_name: ms-ppt-metricas
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    mem_limit: "1g"
+    mem_reservation: "512m"
+    cpus: "1"
+    cpuset: "2"

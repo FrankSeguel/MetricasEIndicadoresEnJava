@@ -1,0 +1,62 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'cl.fseguel'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+        // Spring Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        
+        compileOnly 'org.projectlombok:lombok'
+
+        // Base de datos
+        runtimeOnly 'com.h2database:h2'
+	//runtimeOnly 'com.mysql:mysql-connector-j'
+	
+	annotationProcessor 'org.projectlombok:lombok'
+        
+        // Micrometer
+        implementation("io.micrometer:micrometer-core:1.11.2")
+        implementation("io.micrometer:micrometer-tracing:1.0.0")
+        implementation("io.micrometer:micrometer-tracing-bridge-brave:1.0.0")
+        implementation 'io.micrometer:micrometer-registry-prometheus:latest.release'
+        implementation("io.zipkin.reporter2:zipkin-reporter-brave")
+        implementation("io.zipkin.brave:brave-instrumentation-kafka-clients")
+
+        implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+
+        // Doc Swagger
+        implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0'
+        
+        // Dozer Mapper
+        implementation 'net.sf.dozer:dozer:5.5.1'
+        implementation 'org.apache.commons:commons-lang3:3.13.0'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
