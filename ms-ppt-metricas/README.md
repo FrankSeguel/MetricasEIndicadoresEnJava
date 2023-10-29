@@ -38,17 +38,22 @@ java -jar build/libs/ms-ppt-metricas-0.0.1-SNAPSHOT.jar
 ##### SWAGGER y TEST
 
 ```
-
 http://localhost:8080/ms-ppt-metricas/swagger-ui/index.html
+```
+![SWAGGER](doc/imagenes/swagger.png)
 
+```
+PUT
+http://localhost:8080/ms-ppt-metricas/
 
-http://localhost:8080/ms-ppt-metricas/add
-
+GET
 http://localhost:8080/ms-ppt-metricas/{id}/get
 
+DELETE
 http://localhost:8080/ms-ppt-metricas/{id}/delete
 
-http://localhost:8080/ms-ppt-metricas/getAll
+GET
+http://localhost:8080/ms-ppt-metricas/
 
 ```
 
