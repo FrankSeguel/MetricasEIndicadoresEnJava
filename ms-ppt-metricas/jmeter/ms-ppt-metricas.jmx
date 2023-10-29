@@ -16,7 +16,7 @@
         <stringProp name="filename"></stringProp>
         <stringProp name="parameters"></stringProp>
         <stringProp name="script">props.put(&quot;vHOST&quot;, &quot;localhost&quot;);
-props.put(&quot;vTHREADS&quot;, &quot;500&quot;);
+props.put(&quot;vTHREADS&quot;, &quot;1000&quot;);
 props.put(&quot;vCONTEXT&quot;, &quot;/ms-ppt-metricas&quot;);
 props.put(&quot;vVERSION&quot;, &quot;&quot;);
 props.put(&quot;vPORT&quot;, &quot;8080&quot;);
@@ -108,7 +108,7 @@ props.put(&quot;vUSERUUID&quot;, UUID.randomUUID().toString());</stringProp>
           <stringProp name="HTTPSampler.port">${__P(vPORT)}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${__P(vCONTEXT)}/usuario/add</stringProp>
+          <stringProp name="HTTPSampler.path">${__P(vCONTEXT)}/usuario/</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -168,7 +168,7 @@ props.put(&quot;vUSERUUID&quot;, UUID.randomUUID().toString());</stringProp>
           <stringProp name="HTTPSampler.port">${__P(vPORT)}</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${__P(vCONTEXT)}/usuario/getAll</stringProp>
+          <stringProp name="HTTPSampler.path">${__P(vCONTEXT)}/usuario/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

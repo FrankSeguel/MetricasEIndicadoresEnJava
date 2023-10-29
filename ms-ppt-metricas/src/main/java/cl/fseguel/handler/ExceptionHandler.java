@@ -1,5 +1,7 @@
 package cl.fseguel.handler;
 
+import cl.fseguel.exception.BusinessException;
+import cl.fseguel.exception.ErrorTecnicoException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.HibernateException;
 import org.springframework.core.Ordered;
@@ -40,4 +42,17 @@ public class ExceptionHandler {
         return new ResponseEntity<>(exception.getMessage(), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @org.springframework.web.bind.annotation.ExceptionHandler(BusinessException.class)
+    @Order(Ordered.LOWEST_PRECEDENCE)
+    public ResponseEntity<String> manageInternalServerErrorByDefault(BusinessException exception) {
+        log.error(exception.getDescripcion());
+        return new ResponseEntity<>(exception.getMessage(), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @org.springframework.web.bind.annotation.ExceptionHandler(ErrorTecnicoException.class)
+    @Order(Ordered.LOWEST_PRECEDENCE)
+    public ResponseEntity<String> manageInternalServerErrorByDefault(ErrorTecnicoException exception) {
+        log.error(exception.getDescripcion());
+        return new ResponseEntity<>(exception.getMessage(), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

@@ -25,7 +25,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PutMapping("/add")
+    @PutMapping("/")
     public UsuarioDto add(@RequestBody UsuarioDto usuario) {
         log.debug("UsuarioController - add: " + usuario.toString());
         return usuarioService.crearUsuario(usuario);
@@ -43,7 +43,7 @@ public class UsuarioController {
         usuarioService.eliminarUsuario(id);
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/")
     public List<UsuarioDto> getAll() {
         log.debug("UsuarioController - getAll: ");
         return usuarioService.listarUsuario();
