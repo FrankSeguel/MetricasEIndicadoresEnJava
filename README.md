@@ -11,5 +11,5 @@ En esta presentación revisaremos una aplicacion construida en Spring Boot con v
 	![docker-compose up -d ](doc/imagenes/docker-1.png)
 	
 3.- Revisamos los contenedores en este caso estoy utilizando portainer.io si no lo tienen pueden ejecuta "docker ps -a"
-	![Contenedores](doc/imagenes/docker-1.png)
+	![Contenedores](doc/imagenes/docker-2.png)
 	
