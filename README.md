@@ -28,5 +28,19 @@ Listar todos los usuarios.
 Puerto de las metricas
 	http://0.0.0.0:9090/actuator
 
-6.- Prometheus
+6.- Verficar que Prometheus tenga comunicación con nuestra aplicación java. Vamos a la URL "http://0.0.0.0:9091/" seleccionamos /Status/Target y debemos entontrarnos con la aplicación como se muestra en la imagen.
 	![Contenedores Prometheus](doc/imagenes/docker-3.png)
+	
+7.- Grafana en "http://0.0.0.0:3000" los logeamos con "admin/admin" y nos solicita ingresar una nueva contraseña.
+
+Seleccionamos en "Home"
+	![Contenedores Grafana](doc/imagenes/docker-4.png)
+
+Vamos a "Add new connection" y seleccionamos Prometheus luego Create new Dashboards.
+	![Add](doc/imagenes/docker-5.png)
+	
+En el "Home" vamos a dashboards y seleccionamos JVM Micrometer
+	![dashboards JVM](doc/imagenes/docker-6.png)
+
+Hecho esto ya tenemos desplegadas las metricas.
+	![Metricas](doc/imagenes/docker-7.png)
