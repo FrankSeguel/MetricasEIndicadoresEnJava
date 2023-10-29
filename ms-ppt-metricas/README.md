@@ -56,6 +56,9 @@ GET
 http://localhost:8080/ms-ppt-metricas/
 
 ```
+##### JMeter - Pruebas automaticas 
+
+![SWAGGER](/doc/imagenes/jmeter.png)
 
 ##### Health 
 
