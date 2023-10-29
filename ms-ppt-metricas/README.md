@@ -40,7 +40,7 @@ java -jar build/libs/ms-ppt-metricas-0.0.1-SNAPSHOT.jar
 ```
 http://localhost:8080/ms-ppt-metricas/swagger-ui/index.html
 ```
-![SWAGGER](doc/imagenes/swagger-ui.png)
+![SWAGGER](/doc/imagenes/swagger-ui.png)
 
 ```
 PUT
