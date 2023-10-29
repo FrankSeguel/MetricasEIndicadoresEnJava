@@ -44,3 +44,8 @@ En el "Home" vamos a dashboards y seleccionamos JVM Micrometer
 
 Hecho esto ya tenemos desplegadas las metricas.
 	![Metricas](doc/imagenes/docker-7.png)
+	
+8.- zipkin - http://0.0.0.0:9411/zipkin
+	![zipkin](doc/imagenes/docker-8.png)
+	
+
