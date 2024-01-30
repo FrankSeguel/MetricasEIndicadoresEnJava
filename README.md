@@ -3,7 +3,7 @@
 En esta presentación revisaremos una aplicacion construida en Spring Boot con varios extras pensando en metricas he indicadores.
 
 
-![zipkin-home|100x100](doc/imagenes/spring-boot-logo.png)
+![zipkin-home|50x50](doc/imagenes/spring-boot-logo.png)
 
 1.- El Primer paso es compilar el proyecto ms-ppt-metricas en java con el build.sh y luego con ./buildDocker.sh para generar la imagen.
 
