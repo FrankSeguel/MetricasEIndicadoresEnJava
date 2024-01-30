@@ -6,7 +6,9 @@ En esta presentación revisaremos una aplicacion construida en Spring Boot con v
 ![zipkin-home](doc/imagenes/spring-boot-logo.png)
 
 
-![Engelbart|100x145](doc/imagenes/spring-boot-logo.png)
+
+![drawing](doc/imagenes/spring-boot-logo.png)   
+{:.some-css-class width="200"}
 
 1.- El Primer paso es compilar el proyecto ms-ppt-metricas en java con el build.sh y luego con ./buildDocker.sh para generar la imagen.
 
